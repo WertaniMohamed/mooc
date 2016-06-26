@@ -3,23 +3,54 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="/views/templates/template.xhtml">
+<ui:composition template="/templetes/login.xhtml">
 	<ui:define name="pageTitle">Login</ui:define>
-	<ui:define name="pageHeader">Welcome to MOOC</ui:define>
 	<ui:define name="body">
-		<h:outputText value="Welcome" />
-		<h:form>
-			<h:panelGrid columns="2">
-				<h:outputText value="Email" />
-				<h:inputText value="#{userBean.currentUser.email}" />
-				<h:outputText value="Password" />
-				<h:inputSecret value="#{userBean.currentUser.password}" />
-				<h:commandButton action="#{userBean.authenticate()}" value="Login" />
-			</h:panelGrid>
-			<h:messages style="color:red" />
-		</h:form>
+		<div class="container-fluid">
+
+			<div class="lock-container">
+				<div class="panel panel-default text-center paper-shadow"
+					data-z="0.5">
+					<h1 class="text-display-1 text-center margin-bottom-none">Sign
+						In</h1>
+					<img src="../resources/images/people/110/guy-5.jpg"
+						class="img-circle width-80" />
+					<div class="panel-body">
+						<h:form>
+							<div class="form-group">
+								<div class="form-control-material">
+									<h:inputText value="#{userBean.currentUser.email}"
+										id="username" styleClass="form-control" />
+
+									<!-- 	<h:input class="form-control" id="username" type="text"
+										placeholder="Username" /> -->
+									<label for="username">Username</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-control-material">
+									<h:inputText value="#{userBean.currentUser.password}"
+										id="password" styleClass="form-control" />
+									<!-- <h:input class="form-control" id="password" type="password"
+										placeholder="Enter Password" /> -->
+									<label for="password">Password</label>
+								</div>
+							</div>
+							<h:commandButton action="#{userBean.authenticate()}"
+								value="Login" styleClass="btn btn-primary" />
+
+							<a href="#" class="forgot-password">Forgot password?</a>
+							<a href="sign-up.html" class="link-text-color">Create account</a>
+							<h:messages style="color:red" />
+
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</ui:define>
 </ui:composition>
 </html>

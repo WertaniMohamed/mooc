@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title><ui:insert name="pageTitle">Templetes</ui:insert></title>
+	<!-- Separated vendor styling -->
+	<h:outputStylesheet library="css" name="/vendor/bootstrap.css" />
+	<h:outputStylesheet library="css" name="/vendor/font-awesome.css" />
+
+	<!-- etc. -->
+
+	<!-- Separated application styling -->
+	<h:outputStylesheet library="css" name="/app/main.css" />
+	<h:outputStylesheet library="css" name="/app/sidebar.css" />
+	<h:outputStylesheet library="css" name="/app/navbar.css" />
+	<h:outputStylesheet library="css" name="/app/app.css" />
+	<!-- etc. -->
+
+</h:head>
+
+<h:body>
+	<!-- Wrapper required for sidebar transitions -->
+	<div class="st-container">
+		<ui:include src="application/navbar.xhtml" />
+		<ui:include src="application/sidebar.xhtml" />
+
+		<!-- Main content -->
+		<!-- this is the wrapper for the content -->
+		<div class="st-pusher" id="content">
+
+			<!-- extra div for emulating position:fixed of the menu -->
+			<div class="st-content">
+
+				<div class="container-fluid">
+					<ui:include src="application/content_exemple.xhtml" />
+					<ui:insert name="content" />
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer class="footer"> <ui:insert name="footer_copyright">
+			<ui:include src="application/_footer_copyright.xhtml" />
+		</ui:insert> </footer>
+
+	</div>
+	<ui:insert name="footer_scripts">
+		<ui:include src="application/_footer_scripts.xhtml" />
+	</ui:insert>
+</h:body>
+
+</html>

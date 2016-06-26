@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	class="ls-bottom-footer">
+<h:head>
+	<title><ui:insert name="pageTitle">Templetes</ui:insert></title>
+	<!-- Separated vendor styling -->
+	<h:outputStylesheet library="css" name="/vendor/bootstrap.css" />
+	<h:outputStylesheet library="css" name="/vendor/font-awesome.css" />
+	<h:outputStylesheet library="css" name="/vendor/morris.css" />
+	<!-- etc. -->
+
+	<!-- Separated application styling -->
+	<h:outputStylesheet library="css" name="/app/main.css" />
+	<h:outputStylesheet library="css" name="/app/sidebar.css" />
+	<h:outputStylesheet library="css" name="/app/navbar.css" />
+	<!-- etc. -->
+
+</h:head>
+
+<h:body>
+
+	<!-- Footer -->
+
+	<div class="footer">
+		<strong>Your product name</strong> - Copyright
+	</div>
+
+	<!-- Vendor Scripts Standalone Libraries -->
+	<h:outputScript library="js" name="/vendor/core/jquery.js" />
+	<h:outputScript library="js" name="/vendor/core/bootstrap.js" />
+	<h:outputScript library="js" name="/vendor/core/jquery-ui.custom.js" />
+	<!-- App Scripts Bundle -->
+	<h:outputScript library="js" name="/app/main.js" />
+	<h:outputScript library="js" name="/app/essentials.js" />
+	<h:outputScript library="js" name="/app/navbar.js" />
+
+
+</h:body>
+
+</html>

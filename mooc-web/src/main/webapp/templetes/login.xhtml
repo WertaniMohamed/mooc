@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" class="ls-bottom-footer">
+<h:head>
+	<title><ui:insert name="pageTitle">Templetes</ui:insert></title>
+	<!-- Separated vendor styling -->
+	<h:outputStylesheet library="css" name="/vendor/bootstrap.css" />
+	<h:outputStylesheet library="css" name="/vendor/font-awesome.css" />
+	<!-- etc. -->
+
+	<!-- Separated application styling -->
+	<h:outputStylesheet library="css" name="/app/main.css" />
+	<h:outputStylesheet library="css" name="/app/sidebar.css" />
+	<h:outputStylesheet library="css" name="/app/navbar.css" />
+	<h:outputStylesheet library="css" name="/app/app.css" />
+	<!-- etc. -->
+
+</h:head>
+
+<h:body class="login">
+
+	<!-- Main content -->
+	<div id="content" style="min-height: 768px;">
+		<ui:insert name="body" />
+	</div>
+
+	<!-- Footer -->
+	<footer class="footer"> <ui:insert name="footer_copyright">
+		<ui:include src="web/_footer_copyright.xhtml" />
+	</ui:insert> </footer>
+
+	<ui:insert name="footer_scripts">
+		<ui:include src="web/_footer_scripts.xhtml" />
+	</ui:insert>
+
+</h:body>
+
+</html>
