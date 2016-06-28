@@ -17,11 +17,27 @@
 	<h:outputStylesheet library="css" name="/app/main.css" />
 	<h:outputStylesheet library="css" name="/app/sidebar.css" />
 	<h:outputStylesheet library="css" name="/app/navbar.css" />
+	<h:outputStylesheet library="css" name="/app/layout.css" />
 	<!-- etc. -->
 
 </h:head>
 
 <h:body>
+<div class="sidebar left sidebar-visible-desktop" id="sidebar">
+
+		<!-- A simple sidebar menu -->
+		<ul class="sidebar-menu">
+			<li><a href="#"><span>My menu item</span></a></li>
+		</ul>
+
+		<!-- // Arbitrary markup here -->
+
+		<!-- Another sidebar menu within the same sidebar -->
+		<ul class="sidebar-menu">
+			<li><a href="#"><span>Another menu item</span></a></li>
+		</ul>
+
+	</div>
 
 	<!-- Footer -->
 
@@ -37,6 +53,7 @@
 	<h:outputScript library="js" name="/app/main.js" />
 	<h:outputScript library="js" name="/app/essentials.js" />
 	<h:outputScript library="js" name="/app/navbar.js" />
+	<h:outputScript library="js" name="/app/layout.js" />
 
 
 </h:body>
