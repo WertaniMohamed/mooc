@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/templetes/templete_web.xhtml">
+	<ui:define name="pageTitle">Index-Home</ui:define>
+	<ui:define name="content">
+
+		<div class="page-section">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="jumbotron bg-transparent text-center margin-none">
+						<h1>Trainer</h1>
+						<p>Learning includes all the form controls shipped with
+							Bootstrap, as well as custom form components that cover various
+							usage scenarios, all themed for modern websites.</p>
+					</div>
+
+					<h2 class="page-section-heading">New Trainer</h2>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h:form  id="NewTrainerForm">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group form-control-material">
+											<h:inputText value="#{userBean.currentNewtutor.firstName}" type="email"
+												class="form-control" id="exampleInputFirstName"
+												placeholder="Your first name" />
+											<label for="exampleInputFirstName">First name</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group form-control-material">
+											<h:inputText value="#{userBean.currentNewtutor.lastName}"
+												type="email" class="form-control" id="exampleInputLastName"
+												placeholder="Your last name" />
+											<label for="exampleInputLastName">Last name</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group form-control-material static required">
+									<h:inputText value="#{userBean.currentNewtutor.email}"
+										type="email" class="form-control" id="exampleInputEmail1"
+										placeholder="Enter email" />
+									<label for="exampleInputEmail1">Email address</label>
+								</div>
+								<div class="form-group form-control-material static required">
+									<h:inputSecret value="#{userBean.currentNewtutor.password}"
+										type="password" class="form-control"
+										id="exampleInputPassword1" placeholder="Password" />
+									<label for="exampleInputPassword1">Password</label>
+								</div>
+								<h:commandButton action="#{userBean.addTrainer()}"
+									value="Submit" type="submit" class="btn btn-primary" />
+							</h:form>
+						</div>
+					</div>
+				</div>
+
+
+				<ui:include src="right-sidebare.xhtml" />
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

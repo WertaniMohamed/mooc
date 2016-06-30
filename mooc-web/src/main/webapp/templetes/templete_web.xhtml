@@ -3,28 +3,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	class="transition-navbar-scroll top-navbar-xlarge">
 <h:head>
 	<title><ui:insert name="pageTitle">Templetes</ui:insert></title>
-	<!-- Separated vendor styling -->
-	<h:outputStylesheet library="css" name="/vendor/bootstrap.css" />
-	<h:outputStylesheet library="css" name="/vendor/font-awesome.css" />
-	<!-- etc. -->
-
-	<!-- Separated application styling -->
-	<h:outputStylesheet library="css" name="/app/main.css" />
-	<h:outputStylesheet library="css" name="/app/sidebar.css" />
-	<h:outputStylesheet library="css" name="/app/navbar.css" />
-	<h:outputStylesheet library="css" name="/app/app.css" />
-	<!-- etc. -->
-
+	<ui:include src="web/_header_scripts.xhtml" />
+	<ui:insert name="header_scripts_page" />
 </h:head>
 
 <h:body>
 	<ui:include src="web/_header.xhtml" />
 
 	<!-- Main content -->
-	<div id="content" style="min-height: 768px;">
+	<div id="content" class="container" style="min-height: 768px;">
 		<ui:insert name="content" />
 	</div>
 	<ui:insert name="footer_section">
@@ -38,6 +29,8 @@
 	<ui:insert name="footer_scripts">
 		<ui:include src="web/_footer_scripts.xhtml" />
 	</ui:insert>
+	<ui:insert name="footer_scripts_page" />
+
 
 </h:body>
 

@@ -3,8 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	class="st-layout ls-top-navbar-large ls-bottom-footer show-sidebar sidebar-l3">
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" class="st-layout ls-top-navbar-large ls-bottom-footer show-sidebar sidebar-l3">
 <h:head>
 	<title><ui:insert name="pageTitle">Templetes</ui:insert></title>
 	<!-- Separated vendor styling -->
@@ -25,8 +24,8 @@
 <h:body>
 	<!-- Wrapper required for sidebar transitions -->
 	<div class="st-container">
-		<ui:include src="application/navbar.xhtml" />
-		<ui:include src="application/sidebar.xhtml" />
+		<ui:include src="test/navbar.xhtml" />
+		<ui:include src="test/sidebar.xhtml" />
 
 		<!-- Main content -->
 		<!-- this is the wrapper for the content -->
@@ -34,23 +33,22 @@
 
 			<!-- extra div for emulating position:fixed of the menu -->
 			<div class="st-content">
-				<div class="st-content-inner padding-none">
-					<div class="container-fluid">
-<!-- 						<ui:include src="application/content_exemple.xhtml" /> -->
-						<ui:insert name="content" />
-					</div>
+
+				<div class="container-fluid">
+					<ui:include src="test/content_exemple.xhtml" />
+					<ui:insert name="content" />
 				</div>
 			</div>
 		</div>
 
 		<!-- Footer -->
 		<footer class="footer"> <ui:insert name="footer_copyright">
-			<ui:include src="application/_footer_copyright.xhtml" />
+			<ui:include src="test/_footer_copyright.xhtml" />
 		</ui:insert> </footer>
 
 	</div>
 	<ui:insert name="footer_scripts">
-		<ui:include src="application/_footer_scripts.xhtml" />
+		<ui:include src="test/_footer_scripts.xhtml" />
 	</ui:insert>
 </h:body>
 

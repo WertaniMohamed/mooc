@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/templetes/templete_web.xhtml">
+	<ui:define name="pageTitle">Index-Home</ui:define>
+	<ui:define name="content">
+
+		<div class="page-section">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="jumbotron bg-transparent text-center margin-none">
+						<h1>Universite</h1>
+						<p>Learning includes all the form controls shipped with
+							Bootstrap, as well as custom form components that cover various
+							usage scenarios, all themed for modern websites.</p>
+					</div>
+
+					<h2 class="page-section-heading">New Cours</h2>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h:form id="NewTrainerForm">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group form-control-material">
+											<h:inputText value="#{userBean.course.title}" type="text"
+												class="form-control" id="exampleInputTitle"
+												placeholder="Title" />
+											<label for="exampleInputTitle">Title</label>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group form-control-material">
+											<h:inputTextarea value="#{userBean.course.description}"
+												 class="form-control" id="exampleInputDescription"
+												placeholder="Your Description" />
+											<label for="exampleInputDescription">Description</label>
+										</div>
+									</div>
+								</div>
+
+								<h:commandButton action="#{userBean.addCours()}"
+									value="Submit" type="submit" class="btn btn-primary" />
+							</h:form>
+						</div>
+					</div>
+				</div>
+
+
+				<ui:include src="right-sidebare.xhtml" />
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

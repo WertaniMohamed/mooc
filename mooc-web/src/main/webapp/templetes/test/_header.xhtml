@@ -75,7 +75,6 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="main-nav">
 				<ul class="nav navbar-nav navbar-nav-margin-left">
-
 					<li><a href="#">Home</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Courses <span class="caret"></span></a>
@@ -84,20 +83,22 @@
 							<li><a href="website-directory-list.html">List Directory</a></li>
 							<li><a href="website-course.html">Single Course</a></li>
 						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Trainer <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="website-student-dashboard.html">Dashboard</a></li>
-							<li><a href="website-student-courses.html">My Courses</a></li>
-							<li><a href="website-take-course.html">Take Course</a></li>
-							<li><a href="website-course-forums.html">Course Forums</a></li>
-							<li><a href="website-take-quiz.html">Take Quiz</a></li>
-							<li><a href="website-student-messages.html">Messages</a></li>
-							<li><a href="website-student-profile.html">Private
-									Profile</a></li>
-						</ul></li>
+
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Comittee Member <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="website-instructor-dashboard.html">Dashboard</a></li>
+							<li><a href="website-instructor-courses.html">My Courses</a></li>
+							<li><a href="website-instructor-course-edit-course.html">Edit
+									Course</a></li>
+							<li><a href="website-instructor-earnings.html">Earnings</a></li>
+							<li><a href="website-instructor-statement.html">Statement</a></li>
+							<li><a href="website-instructor-messages.html">Messages</a></li>
+							<li><a href="website-instructor-profile.html">Private
+									Profile</a></li>
+						</ul></li>
+											<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Trainer <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="website-instructor-dashboard.html">Dashboard</a></li>
 							<li><a href="website-instructor-courses.html">My Courses</a></li>
@@ -116,11 +117,9 @@
 						class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
 						<!-- user -->
 						<li class="dropdown user"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"> <h:graphicImage library="images"
-									name="people/110/guy-6.jpg" alt="" class="img-circle" /> <!-- 							 <img -->
-								<!-- 								src="../resources/images/people/110/guy-6.jpg" alt="" -->
-								<!-- 								class="img-circle" />  --> Bill<span class="caret">
-							</span>
+							data-toggle="dropdown"> <img
+								src="images/people/110/guy-6.jpg" alt="" class="img-circle" />
+								Bill<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="website-student-dashboard.html"><i
@@ -129,41 +128,16 @@
 										class="fa fa-mortar-board"></i> My Courses</a></li>
 								<li><a href="website-student-profile.html"><i
 										class="fa fa-user"></i> Profile</a></li>
-								<li><a href="login.html"><i class="fa fa-sign-out"></i>
+								<li><a href="login.jsf"><i class="fa fa-sign-out"></i>
 										Logout</a></li>
 							</ul></li>
 						<!-- // END user -->
 					</ul>
-					<a href="../views/login.jsf" class="navbar-btn btn btn-primary">Log In</a>
-<!-- 					<h:commandLink action="" value="Log In" styleClass="navbar-btn btn btn-primary"> -->
+					<a href="login.html" class="navbar-btn btn btn-primary">Log In</a>
 				</div>
 			</div>
 			<!-- /.navbar-collapse -->
 
-		</div>
-	</div>
-
-	<div class="parallax overflow-hidden bg-blue-400 page-section third">
-		<div class="container parallax-layer" data-opacity="true">
-			<div class="media v-middle">
-				<div class="media-left text-center">
-					<a href="#">
-							 <h:graphicImage library="images" name="people/110/guy-6.jpg" alt="people"
-							class="img-circle width-80" />
-					</a>
-				</div>
-				<div class="media-body">
-					<h1 class="text-white text-display-1 margin-v-0">#{userBean.currentUser.firstName} #{userBean.currentUser.lastName}</h1>
-					<p class="text-subhead">
-						<a class="link-white text-underline"
-							href="website-student-public-profile.html">View public
-							profile</a>
-					</p>
-				</div>
-				<div class="media-right">
-					<span class="label bg-blue-500">#{userBean.currentUser.firstName}</span>
-				</div>
-			</div>
 		</div>
 	</div>
 </ui:composition>

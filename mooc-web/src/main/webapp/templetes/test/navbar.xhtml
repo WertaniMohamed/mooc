@@ -2,27 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition>
+
 	<!-- Fixed navbar -->
-	<div
-		class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow"
-		data-z="0" data-animated="" role="navigation">
-		<div class="container">
+	<div class="navbar navbar-size-large navbar-default navbar-fixed-top"
+		role="navigation">
+		<div class="container-fluid">
 			<div class="navbar-header">
+				<a href="#sidebar-menu" data-toggle="sidebar-menu"
+					class="toggle pull-left visible-xs"><i class="fa fa-ellipsis-v"></i></a>
 				<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#main-nav">
 					<span class="sr-only">Toggle navigation</span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<div class="navbar-brand navbar-brand-logo">
-					<a class="svg" href="index.html"> <svg viewBox="0 0 106 64"
-							height="100%" width="100%" preserveAspectRatio="xMidYMid meet">
-						<path d="M4.731,36.187h8.234v3.414H0.279V20.481h4.452V36.187z" />
-						<path
+				<div
+					class="navbar-brand navbar-brand-primary navbar-brand-logo navbar-nav-padding-left">
+					<a class="svg" href="app-student-dashboard.html"> <svg
+							viewBox="0 0 106 64" height="100%" width="100%"
+							preserveAspectRatio="xMidYMid meet"> <path
+							d="M4.731,36.187h8.234v3.414H0.279V20.481h4.452V36.187z" /> <path
 							d="M21.094,39.878c-2.093,0-3.763-0.658-5.01-1.971c-1.248-1.313-1.872-2.959-1.872-4.938v-0.498
 	c0-2.163,0.567-3.929,1.7-5.3c1.134-1.37,2.756-2.05,4.866-2.042c1.926,0,3.436,0.578,4.531,1.733
 	c1.095,1.156,1.642,2.723,1.642,4.701v2.325h-8.116l-0.026,0.078c0.096,0.727,0.394,1.325,0.893,1.793s1.164,0.703,1.996,0.703
@@ -74,97 +76,119 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="main-nav">
-				<ul class="nav navbar-nav navbar-nav-margin-left">
-
-					<li><a href="#">Home</a></li>
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Forum <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="app-forum.html">Forum Home</a></li>
+							<li><a href="app-forum-category.html">Forum Category</a></li>
+						</ul></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Courses <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="website-directory-grid.html">Grid Directory</a></li>
-							<li><a href="website-directory-list.html">List Directory</a></li>
-							<li><a href="website-course.html">Single Course</a></li>
+							<li><a href="app-directory-grid.html">Courses Grid</a></li>
+							<li><a href="app-directory-list.html">Courses List</a></li>
+							<li><a href="app-student-course.html">Course Details</a></li>
+						</ul></li>
+					<li class="dropdown active"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown">Student <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class="active"><a href="app-student-dashboard.html">Dashboard</a></li>
+							<li><a href="app-student-courses.html">My Courses</a></li>
+							<li><a href="app-take-course.html">Take Course</a></li>
+							<li><a href="app-course-forums.html">Course Forums</a></li>
+							<li><a href="app-take-quiz.html">Take Quiz</a></li>
+							<li><a href="app-student-profile.html">Edit Profile</a></li>
+							<li><a href="app-student-billing.html">Edit Billing</a></li>
+							<li><a href="app-student-messages.html">Messages</a></li>
 						</ul></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Trainer <span class="caret"></span></a>
+						data-toggle="dropdown">Instructor <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="website-student-dashboard.html">Dashboard</a></li>
-							<li><a href="website-student-courses.html">My Courses</a></li>
-							<li><a href="website-take-course.html">Take Course</a></li>
-							<li><a href="website-course-forums.html">Course Forums</a></li>
-							<li><a href="website-take-quiz.html">Take Quiz</a></li>
-							<li><a href="website-student-messages.html">Messages</a></li>
-							<li><a href="website-student-profile.html">Private
-									Profile</a></li>
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Comittee Member <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="website-instructor-dashboard.html">Dashboard</a></li>
-							<li><a href="website-instructor-courses.html">My Courses</a></li>
-							<li><a href="website-instructor-course-edit-course.html">Edit
+							<li><a href="app-instructor-dashboard.html">Dashboard</a></li>
+							<li><a href="app-instructor-courses.html">My Courses</a></li>
+							<li><a href="app-instructor-course-edit-course.html">Edit
 									Course</a></li>
-							<li><a href="website-instructor-earnings.html">Earnings</a></li>
-							<li><a href="website-instructor-statement.html">Statement</a></li>
-							<li><a href="website-instructor-messages.html">Messages</a></li>
-							<li><a href="website-instructor-profile.html">Private
-									Profile</a></li>
+							<li><a href="app-instructor-earnings.html">Earnings</a></li>
+							<li><a href="app-instructor-statement.html">Statement</a></li>
+							<li><a href="app-instructor-profile.html">Edit Profile</a></li>
+							<li><a href="app-instructor-billing.html">Edit Billing</a></li>
+							<li><a href="app-instructor-messages.html">Messages</a></li>
 						</ul></li>
-
 				</ul>
-				<div class="navbar-right">
-					<ul
-						class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
-						<!-- user -->
-						<li class="dropdown user"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"> <h:graphicImage library="images"
-									name="people/110/guy-6.jpg" alt="" class="img-circle" /> <!-- 							 <img -->
-								<!-- 								src="../resources/images/people/110/guy-6.jpg" alt="" -->
-								<!-- 								class="img-circle" />  --> Bill<span class="caret">
-							</span>
-						</a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="website-student-dashboard.html"><i
-										class="fa fa-bar-chart-o"></i> Dashboard</a></li>
-								<li><a href="website-student-courses.html"><i
-										class="fa fa-mortar-board"></i> My Courses</a></li>
-								<li><a href="website-student-profile.html"><i
-										class="fa fa-user"></i> Profile</a></li>
-								<li><a href="login.html"><i class="fa fa-sign-out"></i>
-										Logout</a></li>
-							</ul></li>
-						<!-- // END user -->
-					</ul>
-					<a href="../views/login.jsf" class="navbar-btn btn btn-primary">Log In</a>
-<!-- 					<h:commandLink action="" value="Log In" styleClass="navbar-btn btn btn-primary"> -->
-				</div>
+				<ul class="nav navbar-nav navbar-nav-bordered navbar-right">
+					<!-- notifications -->
+					<li class="dropdown notifications updates"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown"> <i
+							class="fa fa-bell-o"></i> <span class="badge badge-primary">4</span>
+					</a>
+						<ul class="dropdown-menu" role="notification">
+							<li class="dropdown-header">Notifications</li>
+							<li class="media">
+								<div class="pull-right">
+									<span class="label label-success">New</span>
+								</div>
+								<div class="media-left">
+ 									<img src="../resources/images/people/50/guy-2.jpg" alt="people"
+										class="img-circle" width="30" />
+								</div>
+								<div class="media-body">
+									<a href="#">Adrian D.</a> posted <a href="#">a photo</a> on his
+									timeline. <br /> <span class="text-caption text-muted">5
+										mins ago</span>
+								</div>
+							</li>
+							<li class="media">
+								<div class="pull-right">
+									<span class="label label-success">New</span>
+								</div>
+								<div class="media-left">
+									<img src="../resources/images/people/50/guy-6.jpg" alt="people"
+										class="img-circle" width="30" />
+								</div>
+								<div class="media-body">
+									<a href="#">Bill</a> posted <a href="#">a comment</a> on
+									Adrian's recent <a href="#">post</a>. <br /> <span
+										class="text-caption text-muted">3 hrs ago</span>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<span class="icon-block s30 bg-grey-200"><i
+										class="fa fa-plus"></i></span>
+								</div>
+								<div class="media-body">
+									<a href="#">Mary D.</a> and <a href="#">Michelle</a> are now
+									friends.
+									<p>
+										<span class="text-caption text-muted">1 day ago</span>
+									</p>
+									<a href=""> <img class="width-30 img-circle"
+										src="/../../resourcesimages/people/50/woman-6.jpg" alt="people" /></a> <a
+										href=""> <img class="width-30 img-circle"
+										src="/../../resourcesimages/people/50/woman-3.jpg" alt="people" /></a>
+								</div>
+							</li>
+						</ul></li>
+					<!-- // END notifications -->
+					<!-- User -->
+					<li class="dropdown"><a href="#" class="dropdown-toggle user"
+						data-toggle="dropdown"> <img src="../resources/images/people/110/guy-5.jpg"
+							alt="Bill" class="img-circle" width="40" /> Bill <span
+							class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="app-student-profile.html">Account</a></li>
+							<li><a href="app-student-billing.html">Billing</a></li>
+							<li><a href="login.html">Logout</a></li>
+						</ul></li>
+				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
 
 		</div>
 	</div>
 
-	<div class="parallax overflow-hidden bg-blue-400 page-section third">
-		<div class="container parallax-layer" data-opacity="true">
-			<div class="media v-middle">
-				<div class="media-left text-center">
-					<a href="#">
-							 <h:graphicImage library="images" name="people/110/guy-6.jpg" alt="people"
-							class="img-circle width-80" />
-					</a>
-				</div>
-				<div class="media-body">
-					<h1 class="text-white text-display-1 margin-v-0">#{userBean.currentUser.firstName} #{userBean.currentUser.lastName}</h1>
-					<p class="text-subhead">
-						<a class="link-white text-underline"
-							href="website-student-public-profile.html">View public
-							profile</a>
-					</p>
-				</div>
-				<div class="media-right">
-					<span class="label bg-blue-500">#{userBean.currentUser.firstName}</span>
-				</div>
-			</div>
-		</div>
-	</div>
 </ui:composition>
 </html>
