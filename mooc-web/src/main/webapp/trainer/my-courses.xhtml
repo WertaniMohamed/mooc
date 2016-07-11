@@ -13,16 +13,57 @@
 				<div class="col-md-9">
 
 					<div class="row" data-toggle="isotope">
-					<h:dataTable   value="#{userBean.courseList}" var="item" >
-						<h:column><f:facet name="header">Course Title</f:facet>
-						#{item.title}
-						</h:column>
-						<h:column><f:facet name="header">Course Description</f:facet>
-						#{item.description}</h:column>
-					</h:dataTable>
-					
-					</div>
-					<div class="row" data-toggle="isotope">
+						<ui:repeat var="item" value="#{userBean.courseList}">
+							<div class="item col-xs-12 col-sm-6 col-lg-4">
+								<div class="panel panel-default paper-shadow" data-z="0.5">
+
+									<div class="cover overlay cover-image-full hover">
+										<span class="img icon-block height-150 bg-default"></span> <a
+											href="website-instructor-course-edit-course.html"
+											class="padding-none overlay overlay-full icon-block bg-default">
+											<span class="v-center"> <i class="fa fa-github"></i>
+										</span>
+										</a> <a href="website-instructor-course-edit-course.html"
+											class="overlay overlay-full overlay-hover overlay-bg-white">
+											<span class="v-center"> <span
+												class="btn btn-circle btn-white btn-lg"><i
+													class="fa fa-graduation-cap"></i></span>
+										</span>
+										</a>
+
+									</div>
+
+									<div class="panel-body">
+										<h4 class="text-headline margin-v-0-10">
+											<a href="#{item.title}.jsf">#{item.title}
+											</a><br/>
+											 #{item.description}
+										</h4>
+
+									</div>
+									<hr class="margin-none" />
+									<div class="panel-body">
+
+										<a class="btn btn-white btn-flat paper-shadow relative"
+											data-z="0" data-hover-z="1" data-animated=""
+											href="#{item.title}.jsf"><i
+											class="fa fa-fw fa-pencil"></i> Edit course</a>
+
+									</div>
+
+								</div>
+							</div>
+
+
+
+							<!-- 						<h:column> -->
+							<!-- 						#{item.title} -->
+							<!-- 						</h:column> -->
+							<!-- 						<h:column> -->
+							<!-- 						#{item.description}</h:column> -->
+							<!-- 						</h:dataTable> -->
+						</ui:repeat>
+
 
 						<div class="item col-xs-12 col-sm-6 col-lg-4">
 							<div class="panel panel-default paper-shadow" data-z="0.5">
